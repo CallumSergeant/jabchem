@@ -491,7 +491,7 @@
             <footer class="footer fixed-bottom mt-5 py-3 bg-light">
                 <div class="container">
                     <span class="text-muted">
-                        Copyright &copy; 2020 JABchem
+                        Copyright &copy; <span id="year"></span> JABchem
                         <div>
                             <a target="_blank"
                                 href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALBN8M1UMUFGTVRROE4xNjNQU1VBWjBKSkhBTE0xRi4u">Report
@@ -508,5 +508,8 @@
 
 </div>
 
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 
 </html>
