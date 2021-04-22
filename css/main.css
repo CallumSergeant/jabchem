@@ -10,3 +10,14 @@ main > .container {
 .wrapper {
   overflow-x: hidden;
 }
+
+@media (min-width: 1200px) {
+  .footer-padding{
+    margin-top:85px;
+  }
+  .footer {
+    position: fixed;
+    width:100%;
+    bottom: 0;
+  }
+}

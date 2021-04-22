@@ -39,26 +39,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="/">JABchem</a>
-                <span class="text-white d-none d-lg-block">| &nbsp;</span>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/chemistry/advancedhigher/">Advanced Higher</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/chemistry/higher/">Higher</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tooltip" title="Including Int2 + SG"
-                                href="/chemistry/national5/">National 5</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tooltip" title="Including databooklets"
-                                href="/chemistry/additional/">Additional
-                                Materials</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Choose your subject
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/">Chemistry</a>
+                                <a class="dropdown-item" href="/biology/">Biology <span
+                                        class="badge badge-primary">Beta</span></a>
+                                <a class="dropdown-item" href="/physics/">Physics <span
+                                        class="badge badge-primary">Beta</span></a>
+                                <a class="dropdown-item" href="#">Maths <span class="badge badge-secondary">Coming
+                                        Soon</span></a>
+                            </div>
                         </li>
                     </ul>
-                </div>
             </nav>
         </div>
     </div>
@@ -67,21 +65,6 @@
         <div class="col-12">
             <!-- Intro text -->
             <div class="container mt-5">
-                <!-- Current info/error section -->
-                <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                    Changes to this site mean that some of links you have perviously used to access our resources may
-                    have
-                    changed. If you've recieved this error when clicking a link you've used before or have saved
-                    elsewhere, don't worry,
-                    to access the resource simply navigate to it from the navigation menus at the top of the site. <p
-                        class="mt-2 mb-0"><strong>You'll always be able to access the home page at <a
-                                style="text-decoration: none; color:inherit;"
-                                href="https://jabchem.org.uk">jabchem.org.uk</a></strong>
-                    </p>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="alert alert-warning" role="alert">
 
                     That returned a 404 error code. Nothing was found.
@@ -120,9 +103,9 @@
 
 
     <!-- Static footer -->
-    <div class="row" style="margin-top:85px;">
+    <div class="row footer-padding">
         <div class="col-12">
-            <footer class="footer fixed-bottom mt-5 py-3 bg-light">
+            <footer class="footer mt-5 py-3 bg-light">
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -135,8 +118,9 @@
                                     |
                                     <a href="mailto:permissions@jabchem.org.uk?subject=Permission Request">Request
                                         Permission</a>
+                                    |
+                                    <a href="/privacy/">Privacy</a>
                                 </div>
-
                             </span>
                         </div>
                         <div class="col-1">
@@ -145,7 +129,6 @@
                         </div>
                     </div>
                 </div>
-
             </footer>
         </div>
     </div>
