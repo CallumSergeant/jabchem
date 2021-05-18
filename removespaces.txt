@@ -1,1 +1,0 @@
-Get-ChildItem [foldername] -Directory -Recurse | Rename-Item  -NewName {$_.Name -replace ' ',''}
