@@ -5,5 +5,5 @@ for i in range(1, 16):
         <th scope="row">''',a,'''</th>
         <td><a href="int1/Int1SQAPP/Int1SQAPP''', a ,'''.pdf">''',a,''' Past Paper</a></td>
         <td><a href="int1/Int1JABchemMsch/Int1JABchemMsch''',a,'''.pdf">JABchem Solutions</a></td>
-        <td><a href="int1/Int1SQAPP/Int1SQAPP''',a,'''.pdf">SQA Solutions</a></td>
+        <td><a href="int1/Int1SQAMsch/Int1SQAMsch''',a,'''.pdf">SQA Solutions</a></td>
 </tr>''', sep='')
