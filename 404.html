@@ -4,8 +4,8 @@
 <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Higher Maths — JABchem</title>
-<meta name="description" content="Advanced Higher Maths past papers and revision resources.">
+<title>Page Not Found - JABchem</title>
+<meta name="description" content="The page you're looking for couldn't be found. Search for what you need below.">
 <link rel="icon" href="/assets/favicon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -305,9 +305,167 @@
 </style>
 
 <style>
-  :root {
-    --accent: #BA7517;
-    --accent-pale: #BA751718;
+  .notfound-hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+  .notfound-code {
+    font-size: 96px;
+    font-weight: 800;
+    letter-spacing: -4px;
+    color: var(--accent);
+    opacity: 0.12;
+    line-height: 1;
+    margin-bottom: 4px;
+    user-select: none;
+  }
+  .notfound-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .notfound-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ── Inline search box ── */
+  .nf-search-wrap {
+    max-width: 560px;
+    margin: 32px auto 0;
+  }
+  .nf-search-box {
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 0 16px;
+    gap: 10px;
+    box-shadow: 0 0 0 4px rgba(83,74,183,0.10);
+    transition: box-shadow 0.2s;
+  }
+  .nf-search-box:focus-within {
+    box-shadow: 0 0 0 5px rgba(83,74,183,0.18);
+  }
+  .nf-search-box i {
+    color: var(--accent);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .nf-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text);
+    padding: 14px 0;
+  }
+  .nf-search-input::placeholder { color: var(--text-light); }
+
+  /* ── Inline results ── */
+  .nf-results {
+    margin-top: 16px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .nf-results:empty { display: none; }
+  .nf-group-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 8px 14px 4px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .nf-result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.1s;
+  }
+  .nf-result:last-child { border-bottom: none; }
+  .nf-result:hover { background: var(--bg); }
+  .nf-result-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .nf-result-icon i { font-size: 14px; }
+  .nf-result-lvl {
+    position: absolute;
+    bottom: -4px;
+    right: -5px;
+    font-size: 7px;
+    font-weight: 800;
+    background: #374151;
+    color: white;
+    border-radius: 3px;
+    padding: 1px 3px;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  .nf-result-text { flex: 1; min-width: 0; }
+  .nf-result-title {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+  }
+  .nf-result-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nf-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .nf-empty {
+    padding: 24px 14px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .nf-empty-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 6px;
+  }
+  .nf-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 10px;
   }
 </style>
 
@@ -342,7 +500,7 @@
         Biology
       </a>
       
-      <a href="/maths/" class="nav-item active">
+      <a href="/maths/" class="nav-item">
         <i class="fa fa-calculator"></i>
         Maths
       </a>
@@ -390,315 +548,32 @@
 
 <div class="page">
   
-<div class="level-header">
-  <a href="/maths/" class="level-header-subject">
-    <div class="level-header-icon" style="background:#BA751718">
-      <i class="fa fa-calculator" style="color:#BA7517"></i>
-    </div>
-    Maths
-  </a>
-  <i class="fa fa-chevron-right level-header-sep"></i>
-  <div class="level-header-pills">
-    
-    <a href="/maths/national5/" class="level-pill">National 5</a>
-    
-    <a href="/maths/higher/" class="level-pill">Higher</a>
-    
-    <a href="/maths/advancedhigher/" class="level-pill active">Advanced Higher</a>
-    
-    <a href="/maths/archive/" class="level-pill">Archive</a>
-    
-  </div>
+<div class="notfound-hero">
+  <div class="notfound-code">404</div>
+  <h1 class="notfound-title">Page not found</h1>
+  <p class="notfound-sub">
+    This link may have changed when we updated the site. Sorry!
+    We've searched for what you were looking for - or type below to find it.
+  </p>
 </div>
 
-<div class="level-layout">
-
-  
-  <div class="level-sections">
-  
-  
-  
-  
-  
-
-  <div class="section-block" id="sqa_past_papers_ah">
-
-  
-  
-    
-    <div class="section-heading"><h2>SQA Past Papers - AH</h2></div>
-    <div class="paper-table-wrap">
-      <table class="paper-table">
-        <thead>
-          <tr>
-            <th class="col-year">Year</th>
-            
-              <th class="col-paper">Paper PDF</th>
-            
-            
-            <th class="col-ms">SQA MS</th>
-          </tr>
-        </thead>
-        <tbody>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2025</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2025_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2025_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2024</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2024_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2024_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2023</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2023_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2023_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2022</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2022_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2022_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2020</span><span class="year-label">Unused</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2020_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2020_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2019</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2019_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2019_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2018</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2018_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2018_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2017</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2017_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2017_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2016</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2016_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2016_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2015</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2015_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2015_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2014</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2014_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2014_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2013</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2013_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2013_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2012</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2012_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2012_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2011</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2011_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2011_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2010</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2010_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2010_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2009</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2009_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2009_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2008</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2008_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2008_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2007</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2007_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2007_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2006</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2006_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2006_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2005</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2005_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2005_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2004</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2004_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2004_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2003</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2003_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2003_ms.pdf" class="pdf-link pdf-link-sqa" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> SQA</a></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2002</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2002_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><span class="btn-missing">—</span></td>
-          </tr>
-          
-          <tr>
-            <td><div class="year-cell"><span class="year-badge">2001</span></div></td>
-            
-            <td><a href="/files/maths/advancedhigher/sqa_past_papers_ah/2001_paper.pdf" class="pdf-link" target="_blank" rel="noopener"><i class="fa fa-file-pdf"></i> Paper</a></td>
-            
-            
-            <td><span class="btn-missing">—</span></td>
-          </tr>
-          
-        </tbody>
-      </table>
-    </div>
-    
-
-  
-  
-
+<div class="nf-search-wrap">
+  <div class="nf-search-box">
+    <i class="fa fa-search"></i>
+    <input
+      class="nf-search-input"
+      id="nfSearch"
+      type="text"
+      placeholder="Search subjects, levels, years…"
+      autocomplete="off"
+      spellcheck="false"
+    >
   </div>
-  
-  </div>
-
-  
-  <aside class="level-toc">
-    <div class="toc-inner">
-      <p class="toc-label">On this page</p>
-      
-      <a href="#sqa_past_papers_ah" class="toc-link">SQA Past Papers - AH</a>
-      
-    </div>
-  </aside>
-
+  <div class="nf-results" id="nfResults"></div>
+  <p class="nf-hint" id="nfHint" style="display:none">
+    Try "Chemistry Higher", "N5 Maths 2023", or just a subject name.
+  </p>
 </div>
-
-<script>
-  (function () {
-    const sections = document.querySelectorAll('.section-block[id]');
-    const links = document.querySelectorAll('.toc-link');
-    if (!sections.length || !links.length) return;
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const a = document.querySelector('.toc-link[href="#' + entry.target.id + '"]');
-          if (a) a.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-10% 0px -80% 0px' });
-    sections.forEach(s => observer.observe(s));
-  })();
-</script>
-
 
 </div>
 
@@ -820,7 +695,7 @@
       <div class="footer-bottom-links">
         
         
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLGt6lFgfMX3zQDPibfccYmPBzGqeKCtYNVdAU-7MXLaykNA/viewform?usp=pp_url&amp;entry.1725158399=https://jabchem.org.uk/maths/advancedhigher/" class="footer-bottom-link">Report Problem</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLGt6lFgfMX3zQDPibfccYmPBzGqeKCtYNVdAU-7MXLaykNA/viewform?usp=pp_url&amp;entry.1725158399=https://jabchem.org.uk/404" class="footer-bottom-link">Report Problem</a>
         
         <span class="footer-sep">|</span>
         <a href="mailto:getintouch@jabchem.org.uk" class="footer-bottom-link">Request Permission</a>
@@ -1128,6 +1003,179 @@
   apply(document.documentElement.getAttribute('data-theme') === 'dark');
   btn.addEventListener('click', function () {
     apply(document.documentElement.getAttribute('data-theme') !== 'dark');
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var typeInfo = {
+    'Past Paper':             { label: 'Past Paper',    bg: '#EEF2FF', color: '#4338CA' },
+    'JABchem Marking Scheme': { label: 'JABchem MS',    bg: '#ECFDF5', color: '#065F46' },
+    'SQA Marking Scheme':     { label: 'SQA MS',        bg: '#FFF7ED', color: '#9A3412' },
+    'Traffic light':          { label: 'Traffic Light', bg: '#FEF9C3', color: '#854D0E' },
+    'Study note':             { label: 'Study Note',    bg: '#F0F9FF', color: '#0369A1' },
+    'Data booklet':           { label: 'Data Booklet',  bg: '#F5F3FF', color: '#6D28D9' },
+    'Formula sheet':          { label: 'Formula Sheet', bg: '#FDF2F8', color: '#9D174D' },
+    'Question map':           { label: 'Question Map',  bg: '#F0FDF4', color: '#166534' },
+  };
+  var levelAbbr = { 'National 5': 'N5', 'Higher': 'H', 'Advanced Higher': 'AH' };
+  var searchAliases = {
+    'n5': ['national', '5'], 'nat5': ['national', '5'], 'national5': ['national', '5'],
+    'h': ['higher'], 'ah': ['advanced', 'higher'],
+    'ms': ['marking', 'scheme'], 'pp': ['past', 'paper'],
+    'bio': ['biology'], 'chem': ['chemistry'], 'phys': ['physics'],
+    'math': ['maths'], 'int2': ['intermediate', '2'], 'int1': ['intermediate', '1'],
+    'sg': ['standard', 'grade'],
+  };
+
+  var index = null;
+
+  function loadIndex(cb) {
+    if (index) return cb();
+    fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (d) {
+      index = d; cb();
+    }).catch(function () { index = []; cb(); });
+  }
+
+  function tokenize(str) {
+    return str.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(Boolean);
+  }
+
+  function expand(tokens) {
+    var out = [];
+    tokens.forEach(function (t) {
+      var exp = searchAliases[t];
+      if (exp) exp.forEach(function (e) { if (!out.includes(e)) out.push(e); });
+      else if (!out.includes(t)) out.push(t);
+    });
+    return out;
+  }
+
+  function matches(r, tokens) {
+    var hay = [r.subject, r.level || '', String(r.year || ''), r.subjectSlug,
+               r.levelSlug || '', r.title || '', r.fileLabel || '', r.sectionTitle || ''].join(' ').toLowerCase();
+    return expand(tokens).every(function (t) { return hay.includes(t); });
+  }
+
+  function rank(r) {
+    return r.type === 'subject' ? 0 : r.type === 'level' ? 1 : r.type === 'section' ? 2 : r.type === 'paper' ? 3 : 4;
+  }
+
+  function doSearch(q) {
+    var tokens = tokenize(q);
+    if (!tokens.length) return [];
+    return index.filter(function (r) { return matches(r, tokens); })
+      .sort(function (a, b) { var d = rank(a) - rank(b); return d !== 0 ? d : (b.year || 0) - (a.year || 0); })
+      .slice(0, 14);
+  }
+
+  function iconHtml(r) {
+    var fa = (r.type === 'paper' || r.type === 'resource') ? 'fa-file' : r.icon;
+    var abbr = r.level && levelAbbr[r.level];
+    var badge = (abbr && (r.type === 'paper' || r.type === 'resource'))
+      ? '<span class="nf-result-lvl">' + abbr + '</span>' : '';
+    return '<div class="nf-result-icon" style="background:' + r.colour + '18">'
+      + '<i class="fa ' + fa + '" style="color:' + r.colour + '"></i>' + badge + '</div>';
+  }
+
+  var sectionTypeLabels = {
+    pastPapers: 'Past Papers', archive: 'Archive', customTable: 'Resources',
+    trafficLights: 'Traffic Lights', studyNotes: 'Study Notes',
+    questionMaps: 'Question Maps', dataBooklets: 'Data Booklets', formulaSheets: 'Formula Sheets',
+  };
+
+  function renderResults(results, q) {
+    var box = document.getElementById('nfResults');
+    var hint = document.getElementById('nfHint');
+    if (!results.length) {
+      box.innerHTML = '<div class="nf-empty">No results for <strong>' + q + '</strong>'
+        + '<div class="nf-empty-hint">Try a subject name, level, or year</div></div>';
+      hint.style.display = 'none';
+      return;
+    }
+    hint.style.display = 'none';
+    var html = '';
+    var lastGroup = null;
+    results.forEach(function (r) {
+      var group = (r.type === 'paper' || r.type === 'resource') ? 'files' : 'pages';
+      if (group !== lastGroup) {
+        html += '<div class="nf-group-label">' + (group === 'files' ? 'Papers &amp; Resources' : 'Subjects &amp; Levels') + '</div>';
+        lastGroup = group;
+      }
+      var title, meta, badge = '', newTab = false;
+      if (r.type === 'paper') {
+        newTab = true;
+        var info = typeInfo[r.fileLabel] || { label: r.fileLabel, bg: '#F3F4F6', color: '#374151' };
+        title = r.subject + ' ' + r.year;
+        meta = r.sectionTitle ? r.level + ' · ' + r.sectionTitle : r.level;
+        badge = '<span class="nf-badge" style="background:' + info.bg + ';color:' + info.color + '">' + info.label + '</span>';
+      } else if (r.type === 'resource') {
+        newTab = true;
+        var ri = typeInfo[r.resourceLabel] || { label: r.resourceLabel, bg: '#F3F4F6', color: '#374151' };
+        title = r.title; meta = r.subject + ' · ' + r.level;
+        badge = '<span class="nf-badge" style="background:' + ri.bg + ';color:' + ri.color + '">' + ri.label + '</span>';
+      } else if (r.type === 'section') {
+        title = r.title; meta = r.subject + ' · ' + r.level;
+        badge = '<span class="nf-badge" style="background:#F3F4F6;color:#374151">' + (sectionTypeLabels[r.resourceType] || r.resourceType) + '</span>';
+      } else if (r.type === 'level') {
+        title = r.subject + ' · ' + r.level; meta = r.resourceCount + ' resources';
+      } else {
+        title = r.subject; meta = 'View all levels';
+      }
+      var target = newTab ? ' target="_blank" rel="noopener"' : '';
+      html += '<a class="nf-result" href="' + r.url + '"' + target + '>'
+        + iconHtml(r)
+        + '<div class="nf-result-text"><div class="nf-result-title">' + title + '</div>'
+        + '<div class="nf-result-meta">' + meta + '</div></div>'
+        + (badge || '') + '</a>';
+    });
+    box.innerHTML = html;
+  }
+
+  function extractFromUrl() {
+    var path = window.location.pathname;
+    var parts = path.split('/').filter(Boolean);
+    var terms = [];
+    parts.forEach(function (p) {
+      p = p.replace(/\.(pdf|html|htm)$/i, '');
+      p.split(/[-_]+/).forEach(function (w) {
+        if (w && w.length > 1 && !terms.includes(w)) terms.push(w);
+      });
+    });
+    // pull any 4-digit year from the full path too
+    var m = path.match(/\b(19|20)\d{2}\b/);
+    if (m && !terms.includes(m[0])) terms.push(m[0]);
+    return terms.join(' ');
+  }
+
+  var input = document.getElementById('nfSearch');
+
+  input.addEventListener('input', function () {
+    var q = input.value.trim();
+    var box = document.getElementById('nfResults');
+    var hint = document.getElementById('nfHint');
+    if (!q) { box.innerHTML = ''; hint.style.display = 'block'; return; }
+    loadIndex(function () { renderResults(doSearch(q), q); });
+  });
+
+  // Auto-search from URL on load
+  loadIndex(function () {
+    var keywords = extractFromUrl();
+    if (keywords) {
+      input.value = keywords;
+      var results = doSearch(keywords);
+      if (results.length) {
+        renderResults(results, keywords);
+      } else {
+        // No results from URL — show hint and focus
+        document.getElementById('nfHint').style.display = 'block';
+      }
+    } else {
+      document.getElementById('nfHint').style.display = 'block';
+    }
+    input.focus();
+    input.select();
   });
 })();
 </script>
